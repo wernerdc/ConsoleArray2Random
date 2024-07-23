@@ -8,16 +8,28 @@
 
             Random random = new Random();
             int[,] randomArray = new int[10,14];
+            
             for (int i = 0; i < randomArray.GetLength(0); i++) {
-                for (int j = 0; j < randomArray.GetLength(1) - 4; j++) {
-                    randomArray[i, j] = random.Next(100);
+                for (int j = 0; j < randomArray.GetLength(1); j++) {
+                    
+                    if (j < randomArray.GetLength(1) - 4) {
+                        randomArray[i, j] = random.Next(100);
+                        Console.Write(string.Format("{0,3}", randomArray[i, j]));
+                    
+                    } else if (j == randomArray.GetLength(1) -1) {
+                        //randomArray[i, j -4] = 
+                    }
+
+                    
                 }
             }
 
             for (int i = 0; i < randomArray.GetLength(0); i++) {
                 for (int j = 0; j < randomArray.GetLength(1); j++) {
-                    Console.Write(randomArray[i, j] + " ");
+                    Console.Write(string.Format("{0,3}", randomArray[i, j]));
                 }
+
+
                 Console.Write("\n");
             }
 
